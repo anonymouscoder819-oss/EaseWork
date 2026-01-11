@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="assets/images/icon.png" type="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=computer" />
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=Kalam:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="assets/images/icon.png" type="">
+</head>
+
+<body>
+    <div class="container">
+        <div id="navbar-placeholder"></div>
+        <main class="transition-fade transition-left" id="swup">
+            <div class="poem">
+                <div class="poem-title">
+                    <h1>
+                        <span class="title-first-letter">अं</span>तर्संग्राम
+                    </h1>
+                </div>
+                <div class="stanza">
+                    <p>बस युद्ध ही तो है जीवन,और क्या है,</p>
+                    <p>संघर्ष है सारे भोग पी जाने का,</p>
+                    <p>समर है कुछ और जी जाने का,</p>
+                </div>
+                <div class="stanza">
+                    <p>रण शारीरिक है, और मानसिक भी है,</p>
+                    <p>ये अंतर्द्वंद्व विचार का है,</p>
+                    <p>टकराव नफ़रत और प्यार का है,</p>
+                </div>
+                <div class="stanza">
+                    <p>संघर्ष अपनों का है और सपनों का है,</p>
+                    <p>रणक्षेत्र आज जीत और हार का है,</p>
+                    <p>युद्ध बिना तीर और तलवार का है,</p>
+                </div>
+                <div class="stanza">
+                    <p>समर जैसा भी हो ये लड़ना तो है,</p>
+                    <p>रण ऐसा है कि माधव सारथि नहीं हैं,</p>
+                    <p>ऐसा है कि ध्वज पर मारुति नहीं हैं,</p>
+                </div>
+                <div class="stanza">
+                    <p>पर इस टकराव में लड़ने का साहस तो है,</p>
+                    <p>जितना साहस बचा है अब सारे प्राण लगा दूँगा,</p>
+                    <p>संग्राम चाहे जैसा हो मैं त्राहिमाम करा दूँगा,</p>
+                </div>
+                <div class="stanza">
+                    <p>अपने भीतर शत्रु को मैं हर पल छोटा पाऊँगा,</p>
+                    <p>जीत–हार का पता नहीं रणभूमि में मिट जाऊँगा,</p>
+                    <p>इस खुद से खुद की शत्रुता में,</p>
+                    <p>मैं खुद को बेहतर पाऊँगा,</p>
+                    <p>मैं खुद को बेहतर पाऊँगा,</p>
+                </div>
+                <div class="poet">
+                    — Anonymous (Shashank Tripathi)
+                </div>
+            </div>
+        </main>
+
+    </div>
+    <div class="overlay transition-wipe">
+    </div>
+    <script src="/node_modules/swup/dist/Swup.umd.js"></script>
+
+    <script>
+        const swup = new Swup();
+    </script>
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+</body>
+
+</html>

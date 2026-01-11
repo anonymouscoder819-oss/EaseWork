@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="assets/images/icon.png" type="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=computer" />
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="icon" href="assets/images/icon.png" type="">
+</head>
+
+<body>
+    <div class="form-container">
+        <div id="navbar-placeholder"></div>
+        <main class="transition-fade" id="swup">
+            <div class="main">
+                <div class="transition-left">
+                    <div class="container">
+                        <form class="notes-form">
+                            <input type="text" placeholder="Enter the topic here for which you want to generate notes"
+                                class="notes-input-box" required>
+                            <button class="notes-btn">Generate Notes</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <div class="overlay transition-wipe">
+    </div>
+    <script src="/node_modules/swup/dist/Swup.umd.js"></script>
+
+    <script>
+        const swup = new Swup();
+    </script>
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,610 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #222222;
+    width: 100%;
+}
+
+nav {
+    background: rgb(255, 0, 0);
+    padding: .5em;
+
+    a {
+        color: white;
+        font-weight: bold;
+    }
+}
+
+main {
+    width: 80%;
+    margin: 5em auto;
+
+}
+
+main>a {
+    display: inline-block;
+    background: red;
+    color: white;
+    padding: .8em;
+    margin-top: 2em;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222222;
+    left: 0;
+    top: 0;
+    transform: scale(0);
+    transform-origin: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    backdrop-filter: blur(10px);
+    border-right: 1px solid black;
+}
+
+.transition-fade {
+    transition: .4s;
+    opacity: 1;
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
+    transform: translateY(-100px);
+}
+
+.transition-left {
+    transition: .4s;
+    transform: translateX(0px);
+}
+
+html.is-animating .transition-left {
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
+.transition-wipe {
+    transition: .7s ease-in-out;
+    transform: scaleX(0);
+}
+
+html.is-animating .transition-wipe {
+    transform: scaleX(1);
+}
+
+.main-nav {
+    width: 100%;
+    height: 70px;
+    padding: 0 60px;
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 1000;
+    /* background: radial-gradient(circle at center, #222222, #000000); */
+    box-sizing: border-box;
+    color: black;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    width: 180px;
+    cursor: pointer;
+}
+
+.brand img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.nav-items {
+    list-style: none;
+    display: flex;
+    gap: 45px;
+}
+
+.nav-items li a {
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Underline animation */
+.nav-items li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 0%;
+    height: 2px;
+    background: rgb(0, 0, 0);
+    transition: width 0.3s ease;
+}
+
+.nav-items li a:hover::after {
+    width: 100%;
+}
+
+.nav-items a {
+    background: none;
+}
+
+.button {
+    padding: 15px 30px;
+    font-size: 40px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #444, #222222);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 250px;
+    /* box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.3); */
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    border: 2px solid #222222;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    text-align: center;
+    box-sizing: border-box;
+    transform: rotateY(180deg);
+}
+
+.button div {
+    color: #131313;
+    visibility: hidden;
+    transition: color 0.3s ease;
+}
+
+.sectors .button:nth-child(odd) {
+    background: linear-gradient(135deg, #222222, #444);
+    transform: rotateZ(-10deg);
+}
+
+.sectors .button:hover {
+    box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.3);
+    transition: ease-in-out 0.5s;
+    transform: translateY(-10px);
+    background: linear-gradient(135deg, #222222, #444);
+
+}
+
+.sectors .button:hover div {
+    color: black;
+    visibility: visible;
+}
+
+.sectors .button svg {
+    fill: #131313;
+    transition: fill 0.3s ease;
+}
+
+.sectors .button:hover svg {
+    fill: black;
+}
+
+.sectors .button:nth-child(odd):hover {
+    background: linear-gradient(135deg, #444, #222222);
+}
+
+
+.sectors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    width: 80vw;
+}
+
+*::selection {
+    background-color: #464646;
+}
+
+* {
+    color: #000000;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+.sectorbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    margin-bottom: 50px;
+}
+
+.main {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sector-heading {
+    font-size: 45px;
+    color: #0e0d0d;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+    display: inline;
+}
+
+.sectors a {
+    text-decoration: none;
+}
+
+.sectors a svg {
+    display: flex;
+    width: 50%;
+    fill: #000000;
+}
+
+header.heading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first-letter {
+    font-size: 60px;
+    font-weight: 700;
+    color: #000000;
+}
+
+
+.notes-form {
+    min-height: 480px;
+    position: absolute;
+    width: 600px;
+    background: none;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid transparent;
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+    position: relative;
+    margin: auto;
+    top: 10%;
+    animation: fadeIn 1s ease-in-out;
+    animation: border-animation 1s linear infinite;
+}
+
+.notes-form * {
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
+    margin-top: 10px;
+
+}
+
+.notes-input-box {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background: #0e0d0d;
+    color: #464646;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notes-btn {
+    width: calc(100% + 20px);
+    height: 40px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #444;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-family: "Exo 2", sans-serif;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.notes-input-box:hover {
+    border: 1px solid #666;
+}
+
+.notes-input-box:focus {
+    border: 1px solid #888;
+    box-shadow: 0 0 10px #000000;
+}
+
+.notes-btn:hover {
+    background-color: #353434;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.form-container {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes border-animation {
+    0% {
+        border-top-color: #444444;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+
+    25% {
+        border-top-color: #666666;
+        /* Slightly brighter */
+        border-right-color: #444444;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+
+    50% {
+        border-top-color: transparent;
+        border-right-color: #555555;
+        /* Mid-gray glow */
+        border-bottom-color: #444444;
+        border-left-color: transparent;
+    }
+
+    75% {
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: #666666;
+        border-left-color: #444444;
+    }
+
+    100% {
+        border-top-color: #444444;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: #444444;
+    }
+}
+
+
+.main-body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+
+}
+
+.main-body h1 {
+    font-size: 50px;
+    font-weight: 100;
+    text-shadow: 6px -6px 10px rgba(0, 0, 0, 0.5);
+    font-family: "Exo 2", sans-serif;
+    font-weight: bold;
+}
+
+.poem {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #333;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.poem-title h1 {
+    font-size: 55px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    font-family: "Kalam", cursive;
+    font-weight: 500;
+    font-style: normal;
+    color: #111;
+}
+
+.title-first-letter {
+    color: #000000;
+    font-family: "Kalam", cursive;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 60px;
+}
+
+.stanza {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px 0;
+    background: #444;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    min-width: 60%;
+    font-size: 25px;
+    transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease, filter 0.25s ease;
+    filter: blur(4px);
+    cursor: pointer;
+}
+
+.stanza p {
+    font-family: "Kalam", cursive;
+    font-weight: 700;
+    font-style: normal;
+    margin: 10px 0;
+}
+
+.stanza:nth-child(even) p {
+    color: #131313;
+}
+
+.stanza:hover {
+    background: #555;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    filter: none;
+}
+
+
+.poet {
+    font-size: 38px;
+    width: 100%;
+    text-align: right;
+}
+
+.sectors {
+    perspective: 1500px;
+    /* Strong 3D depth */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    width: 80vw;
+}
+
+.flip-card {
+    width: 250px;
+    height: 300px;
+    display: block;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid #222222;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #444, #222222);
+}
+
+/* Initial scattered tilt */
+.sectors .flip-card:nth-child(odd) .flip-card-inner {
+    transform: rotateZ(-8deg);
+}
+/* .sectors .flip-card:nth-child(odd) .flip-card-inner svg{
+    transform: rotateZ(8deg);
+} */
+
+.sectors .flip-card:nth-child(even) .flip-card-inner {
+    transform: rotateZ(6deg);
+}
+/* .sectors .flip-card:nth-child(even) .flip-card-inner svg{
+    transform: rotateZ(-6deg);
+} */
+
+/* Hover: Flip + straighten */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg) rotateZ(0deg) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.flip-card-front {
+    background: linear-gradient(135deg, #444, #222222);
+}
+
+.flip-card-back {
+    background: linear-gradient(135deg, #222222, #444);
+    transform: rotateY(180deg);
+}
+
+.sector-name {
+    font-family: "Dancing Script", cursive;
+    font-size: 45px;
+    font-weight: 700;
+    color: #000000;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.stanza p:hover {
+    font-size: calc(1em + 1px);
+    transition: font-size 0.5s ease;
+}

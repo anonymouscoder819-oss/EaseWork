@@ -492,13 +492,19 @@ header.heading {
     transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease, filter 0.25s ease;
     filter: blur(4px);
     cursor: pointer;
+    border: 2px solid #222;
 }
 
 .stanza p {
     font-family: "Kalam", cursive;
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
-    margin: 10px 0;
+    margin: 2px 0;
+    padding: 3px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .stanza:nth-child(even) p {
@@ -556,6 +562,7 @@ header.heading {
 .sectors .flip-card:nth-child(odd) .flip-card-inner {
     transform: rotateZ(-8deg);
 }
+
 /* .sectors .flip-card:nth-child(odd) .flip-card-inner svg{
     transform: rotateZ(8deg);
 } */
@@ -563,6 +570,7 @@ header.heading {
 .sectors .flip-card:nth-child(even) .flip-card-inner {
     transform: rotateZ(6deg);
 }
+
 /* .sectors .flip-card:nth-child(even) .flip-card-inner svg{
     transform: rotateZ(-6deg);
 } */
@@ -605,6 +613,7 @@ header.heading {
 }
 
 .stanza p:hover {
-    font-size: calc(1em + 1px);
-    transition: font-size 0.5s ease;
+    background-color: #4e4d4d;
+    transition: 1s ease;
 }
+

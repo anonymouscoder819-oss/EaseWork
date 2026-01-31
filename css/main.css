@@ -1,3 +1,88 @@
+@font-face {
+    font-family: 'Dancing Script';
+    src: url('../fonts/DancingScript-VariableFont_wght.woff2') format('woff2');
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    src: url('../fonts/Exo2-VariableFont_wght.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Exo 2';
+    src: url('../fonts/Exo2-Italic-VariableFont_wght.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-VariableFont_wght.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bitcount Prop Single';
+    src: url('../fonts/BitcountPropSingle-VariableFont_wght.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kalam';
+    src: url('../fonts/Kalam-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kalam';
+    src: url('../fonts/Kalam-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Kalam';
+    src: url('../fonts/Kalam-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -86,7 +171,6 @@ html.is-animating .transition-wipe {
     background: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     z-index: 1000;
-    /* background: radial-gradient(circle at center, #222222, #000000); */
     box-sizing: border-box;
     color: black;
     backdrop-filter: blur(10px);
@@ -127,7 +211,6 @@ html.is-animating .transition-wipe {
     padding-bottom: 5px;
 }
 
-/* Underline animation */
 .nav-items li a::after {
     content: "";
     position: absolute;
@@ -153,14 +236,13 @@ html.is-animating .transition-wipe {
     border: none;
     border-radius: 15px;
     background: linear-gradient(135deg, #444, #222222);
-    cursor: pointer;
+    cursor: none;
     transition: background-color 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 300px;
     width: 250px;
-    /* box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.3); */
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
     font-weight: 700;
@@ -400,7 +482,6 @@ header.heading {
 
     25% {
         border-top-color: #666666;
-        /* Slightly brighter */
         border-right-color: #444444;
         border-bottom-color: transparent;
         border-left-color: transparent;
@@ -409,7 +490,6 @@ header.heading {
     50% {
         border-top-color: transparent;
         border-right-color: #555555;
-        /* Mid-gray glow */
         border-bottom-color: #444444;
         border-left-color: transparent;
     }
@@ -527,7 +607,6 @@ header.heading {
 
 .sectors {
     perspective: 1500px;
-    /* Strong 3D depth */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -543,6 +622,7 @@ header.heading {
     display: block;
     text-decoration: none;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .flip-card-inner {
@@ -558,24 +638,14 @@ header.heading {
     background: linear-gradient(135deg, #444, #222222);
 }
 
-/* Initial scattered tilt */
 .sectors .flip-card:nth-child(odd) .flip-card-inner {
     transform: rotateZ(-8deg);
 }
-
-/* .sectors .flip-card:nth-child(odd) .flip-card-inner svg{
-    transform: rotateZ(8deg);
-} */
 
 .sectors .flip-card:nth-child(even) .flip-card-inner {
     transform: rotateZ(6deg);
 }
 
-/* .sectors .flip-card:nth-child(even) .flip-card-inner svg{
-    transform: rotateZ(-6deg);
-} */
-
-/* Hover: Flip + straighten */
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg) rotateZ(0deg) !important;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
@@ -617,3 +687,369 @@ header.heading {
     transition: 1s ease;
 }
 
+.home-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    font-size: xx-large;
+    flex-direction: row;
+    width: 100%;
+}
+
+.left-section,
+.right-section {
+    height: 100%;
+    width: 100%;
+    margin: 20px 0px;
+}
+
+.right-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.left-section h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 60px;
+    animation: enlargeText 0.25s ease-in-out 2 1s;
+}
+
+
+.left-section {
+    margin-right: 30px;
+}
+
+.left-section h3,
+.left-section h4 {
+    margin-right: 40px;
+}
+
+.right-section {
+    opacity: 0.3;
+}
+
+.line {
+    height: 2px;
+    width: 100%;
+    background-color: #111;
+    animation: extend-line 1s ease forwards 2s;
+}
+
+.left-section button {
+    font-size: x-large;
+    border: none;
+    background: #333;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+    cursor: pointer;
+
+}
+
+.left-section button:hover {
+    background: #444;
+    box-shadow: 2px 2px 14px black;
+    transition: all 0.5s ease;
+}
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.info-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.info-box svg {
+    width: 50%;
+    height: 100%;
+    margin-right: 20px;
+    fill: #000000;
+}
+
+.text {
+    background: #444;
+    height: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.text h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.text p {
+    font-size: 30px;
+    margin: 0;
+}
+
+.info-pic {
+    height: 100%;
+    margin: 20px;
+    border-radius: 10px;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.info-box:nth-child(even) {
+    flex-direction: row-reverse;
+
+    .info-pic {
+        margin-left: 0;
+        background: #444;
+    }
+
+    .text {
+        background: #333;
+    }
+}
+
+.info-box:nth-child(odd) .info-pic {
+    margin-right: 0;
+}
+
+.card {
+    position: relative;
+    width: 80%;
+    min-height: 180px;
+    margin: 50px auto;
+    cursor: pointer;
+    height: auto;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.pic-card,
+.text-card {
+    width: 100%;
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.pic-card {
+    background: linear-gradient(135deg, #444, #222222);
+    top: 15px;
+    left: 15px;
+    z-index: 1;
+    transition: all 0.7s ease, box-shadow 0.7s ease;
+}
+
+.text-card {
+    background: linear-gradient(135deg, #222222, #444);
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transition: all 0.7s ease;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    padding: 40px 35px;
+}
+
+.text-card h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.text-card p {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1.45;
+}
+
+.text-card p {
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+.card:hover .pic-card {
+    transform: translate(-150px, -80px);
+    width: 20%;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover .text-card {
+    transform: translate(15px, 15px);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.pic-card svg {
+    width: 80%;
+    height: auto;
+    max-height: 85%;
+    fill: #131313;
+    transition: width 0.7s ease;
+}
+
+.card:hover .pic-card svg {
+    width: 100%;
+    max-height: none;
+}
+
+.card,
+.pic-card,
+.text-card {
+    height: auto;
+}
+
+.card-container {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.card:nth-child(even) {
+    align-self: flex-start;
+    margin-left: 0;
+}
+
+.card:nth-child(odd) {
+    align-self: flex-end;
+    margin-right: 0;
+}
+
+.card:nth-child(even) {
+    margin-left: 5%;
+}
+
+.card:nth-child(odd) {
+    margin-right: 5%;
+}
+
+@keyframes enlargeText {
+    0% {
+        font-size: 60px;
+    }
+
+    50% {
+        font-size: 64px;
+    }
+
+    100% {
+        font-size: 60px;
+    }
+}
+
+@keyframes extend-line {
+    0% {
+        width: 0%;
+        height: 1px;
+    }
+
+    100% {
+        width: 100%;
+        height: 2px;
+    }
+}
+
+.carousel-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    aspect-ratio: 3 / 2;
+    position: relative;
+    overflow: hidden;
+    background: #111;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.slide:nth-child(1) {
+    animation: fastfade 16s infinite;
+}
+
+.slide:nth-child(2) {
+    animation: fastfade 16s infinite 4s;
+}
+
+.slide:nth-child(3) {
+    animation: fastfade 16s infinite 8s;
+}
+
+.slide:nth-child(4) {
+    animation: fastfade 16s infinite 12s;
+}
+
+@keyframes fastfade {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

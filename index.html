@@ -223,7 +223,10 @@
   <script src="/node_modules/swup/dist/Swup.umd.js"></script>
 
   <script>
-    const swup = new Swup();
+    const swup = new Swup({
+      containers: ['#swup'],   // ← change to whatever your main content wrapper id is (usually #swup or #main or body)
+      linkSelector: 'a[href]:not([target^="_"]):not([href^="#"]):not([href^="http"]):not([href^="mailto"]):not([data-no-swup])'
+    });
   </script>
   <script>
     fetch("nav.html")

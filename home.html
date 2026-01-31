@@ -51,12 +51,10 @@
                     <div class="carousel-container">
                         <div class="slides">
 
-                            <div class="slide"
-                                style="background-image: url('assets/images/wp12736218.webp');">
+                            <div class="slide" style="background-image: url('assets/images/wp12736218.webp');">
                             </div>
 
-                            <div class="slide"
-                                style="background-image: url('assets/images/thumbbig-1353386.webp');">
+                            <div class="slide" style="background-image: url('assets/images/thumbbig-1353386.webp');">
                             </div>
 
                             <div class="slide"
@@ -251,7 +249,12 @@
     <script src="/node_modules/swup/dist/Swup.umd.js"></script>
 
     <script>
-        const swup = new Swup();
+        document.addEventListener('DOMContentLoaded', () => {
+            const swup = new Swup({
+                containers: ['#swup'],  // change '#swup' to whatever ID wraps your changing content (e.g. '#main', 'main', or 'body' if unsure)
+                linkSelector: 'a[href]:not([target^="_"]):not([href^="#"]):not([href^="http"]):not([href^="mailto"]):not([data-no-swup])'
+            });
+        });
     </script>
     <script>
         fetch('nav.html')

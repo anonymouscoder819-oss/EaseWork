@@ -223,9 +223,11 @@
   <script src="/node_modules/swup/dist/Swup.umd.js"></script>
 
   <script>
-    const swup = new Swup({
-      containers: ['#swup'],   // ← change to whatever your main content wrapper id is (usually #swup or #main or body)
-      linkSelector: 'a[href]:not([target^="_"]):not([href^="#"]):not([href^="http"]):not([href^="mailto"]):not([data-no-swup])'
+    document.addEventListener('DOMContentLoaded', () => {
+      const swup = new Swup({
+        containers: ['#swup'],  // change '#swup' to whatever ID wraps your changing content (e.g. '#main', 'main', or 'body' if unsure)
+        linkSelector: 'a[href]:not([target^="_"]):not([href^="#"]):not([href^="http"]):not([href^="mailto"]):not([data-no-swup])'
+      });
     });
   </script>
   <script>

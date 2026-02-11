@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EaseWork</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-main: #0f121a;
+            --bg-card: #141a26;
+            --bg-card-hover: #1e2535;
+            --text-primary: #e2e8f0;
+            --text-heading: #f8fafc;
+            --accent: #00d4ff;
+            --accent-dark: #00a0cc;
+            --purple: #a78bfa;
+            --purple-dark: #7c3aed;
+            --border: #2d3748;
+            --shadow: rgba(0, 0, 0, 0.5);
+        }
+
+        [data-theme="light"] {
+            --bg-main: #c5b0b0;
+            --bg-card: #c5b0b0;
+            --bg-card-hover: #f8fafc;
+            --text-primary: #334155;
+            --text-heading: #0f172a;
+            --accent: #0ea5e9;
+            --accent-dark: #0284c7;
+            --purple: #a855f7;
+            --purple-dark: #9333ea;
+            --border: #e2e8f0;
+            --shadow: rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        *::selection {
+            background: pink;
+            color: #0f121a;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-main);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #navbar-placeholder {
+            height: 80px;
+            background: linear-gradient(to right, #1a1f2e, #141a26);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        main {
+            flex: 1;
+            padding: 100px 5% 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .home-section {
+            text-align: center;
+            padding: 60px 20px;
+            margin-bottom: 80px;
+        }
+
+        .home-section h1 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: clamp(3.2rem, 8vw, 6.5rem);
+            font-weight: 800;
+            color: var(--text-heading);
+            margin-bottom: 1.2rem;
+            text-shadow: 0 4px 20px rgba(0, 212, 255, 0.15);
+        }
+
+        .sentence {
+            font-size: clamp(1.5rem, 5vw, 2.6rem);
+            min-height: 3.5rem;
+            font-weight: 400;
+            color: var(--accent);
+            margin: 1.5rem 0 2.5rem;
+        }
+
+        .sentence::before,
+        .sentence::after {
+            content: '{';
+            color: var(--purple);
+            margin: 0 8px;
+            opacity: 0.7;
+        }
+
+        .sentence::after {
+            content: '}';
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+
+        .btn button {
+            padding: 16px 36px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.35s ease;
+            background: linear-gradient(135deg, #1e2535, #141a26);
+            color: white;
+            border: 1px solid #2d3748;
+        }
+
+        .btn button:hover {
+            background: linear-gradient(135deg, var(--accent), var(--purple-dark));
+            color: #0f121a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.25);
+        }
+
+        /* Card container */
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            max-width: 780px;
+            min-height: 220px;
+            perspective: 1200px;
+            cursor: pointer;
+        }
+
+        .text-card,
+        .pic-card {
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 2.2rem;
+            transition: all 0.65s ease;
+            backface-visibility: hidden;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            box-shadow: 0 8px 32px var(--shadow);
+            z-index: 1;
+            z-index: 1;
+        }
+
+        .pic-card {
+            background: linear-gradient(145deg, #1e2535, #141a26);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+            border: 1px solid #2a3345;
+            transform: translate(30px, 30px);
+            z-index: 0;
+            z-index: 2;
+        }
+
+        .text-card h1 {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .text-card p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .pic-card svg {
+            width: 72%;
+            height: auto;
+            max-height: 80%;
+            fill: #4a5568;
+            transition: all 0.6s ease;
+        }
+
+        .card:hover .pic-card {
+            transform: translate(-60px, -60px) rotate(-4deg);
+            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.18);
+        }
+
+        .card:hover .text-card {
+            transform: translate(20px, 20px) rotate(2deg);
+            box-shadow: 0 20px 60px rgba(167, 139, 250, 0.22);
+        }
+
+        .card:hover .pic-card svg {
+            fill: var(--accent);
+            transform: scale(1.08);
+        }
+
+        @media (max-width: 768px) {
+            .home-section {
+                padding: 40px 15px;
+            }
+
+            .card {
+                max-width: 100%;
+            }
+
+            .text-card h1 {
+                font-size: 2.1rem;
+            }
+
+            .pic-card svg {
+                width: 65%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div id="navbar-placeholder"></div>
+
+        <main>
+
+            <section class="home-section">
+                <h1>EaseWork</h1>
+                <div class="sentence"></div>
+
+                <div class="btn">
+                    <button>Sign In →</button>
+                    <button>Login →</button>
+                </div>
+            </section>
+
+            <div class="card-container">
+
+                <div class="card">
+                    <div class="text-card">
+                        <h1>Education</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, temporibus.</p>
+                    </div>
+                    <div class="pic-card">
+                        <!-- Education SVG -->
+                        <svg width="256px" height="256px" viewBox="0 0 48 48" fill="#000000"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.756,13.802l4.824,2.275v5.34c0,0.276,0.224,0.5,0.5,0.5h15.84c0.276,0,0.5-0.224,0.5-0.5v-5.34l4.11-1.938 v3.578c-0.581,0.207-1.001,0.757-1.001,1.409c0,0.828,0.673,1.501,1.501,1.501c0.828,0,1.501-0.673,1.501-1.501 c0-0.652-0.42-1.202-1.001-1.409V13.35c0-0.088-0.029-0.166-0.068-0.238c-0.01-0.019-0.022-0.034-0.035-0.051 c-0.043-0.059-0.095-0.107-0.159-0.142c-0.008-0.005-0.012-0.015-0.021-0.019l-13.03-6.28c-0.138-0.066-0.297-0.066-0.435,0 l-13.03,6.28c-0.173,0.083-0.284,0.26-0.283,0.452C10.471,13.545,10.582,13.72,10.756,13.802z M31.42,20.917H16.58V15.76v-1.883 l1.459-0.233c3.955-0.636,7.966-0.636,11.921,0l1.459,0.233v1.883V20.917z M37.03,19.627c-0.276,0-0.501-0.225-0.501-0.501 s0.225-0.501,0.501-0.501s0.501,0.225,0.501,0.501S37.306,19.627,37.03,19.627z M24,7.625l11.868,5.72l-3.448,1.626V13.45 c0-0.065-0.014-0.127-0.037-0.185c-0.008-0.02-0.022-0.037-0.033-0.056c-0.019-0.035-0.039-0.068-0.066-0.097 c-0.017-0.018-0.037-0.031-0.057-0.047c-0.028-0.023-0.057-0.044-0.09-0.06c-0.024-0.012-0.049-0.018-0.075-0.026 c-0.022-0.007-0.041-0.019-0.065-0.023l-1.879-0.3c-4.062-0.653-8.179-0.653-12.239,0l-1.88,0.3 c-0.023,0.004-0.042,0.016-0.064,0.023c-0.026,0.008-0.051,0.014-0.075,0.026c-0.033,0.016-0.061,0.038-0.089,0.06 c-0.019,0.016-0.04,0.029-0.057,0.047c-0.027,0.029-0.046,0.063-0.065,0.097c-0.011,0.019-0.025,0.035-0.033,0.056 c-0.023,0.058-0.037,0.119-0.037,0.185v1.521l-3.448-1.626L24,7.625z" />
+                            <path
+                                d="M7.5,41.5h11h11h11c0.276,0,0.5-0.224,0.5-0.5V30c0-0.276-0.224-0.5-0.5-0.5H30V24c0-0.276-0.224-0.5-0.5-0.5 h-11c-0.276,0-0.5,0.224-0.5,0.5v8H7.5C7.224,32,7,32.224,7,32.5V41C7,41.276,7.224,41.5,7.5,41.5z M40,30.5v10H30v-10H40z M19,24.5 h10V30v10.5H19v-8V24.5z M8,33h10v7.5H8V33z" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Banking -->
+                <div class="card">
+                    <div class="text-card">
+                        <h1>Banking</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, temporibus.</p>
+                    </div>
+                    <div class="pic-card">
+                        <!-- Banking SVG (shortened version) -->
+                        <svg viewBox="0 0 512 512" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M256,0 L64,69.344 L64,109.344 L448,109.344 L448,69.344 Z" />
+                            <path d="M432,357.344 L80,357.344 L80,421.344 L448,421.344 Z" />
+                            <path d="M162.969,480.609 ..." /> <!-- you can keep your full path or simplify -->
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="text-card">
+                        <h1>Entertainment</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, temporibus.</p>
+                    </div>
+                    <div class="pic-card">
+                        <svg viewBox="0 0 48 48" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M35,4.9A22.2,22.2,0,0,0,4.9,13,22.2,22.2,0,0,0,13,43.1,22.2,22.2,0,0,0,43.1,35,22.2,22.2,0,0,0,35,4.9Z ..." />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="text-card">
+                        <h1>Technology</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, temporibus.</p>
+                    </div>
+                    <div class="pic-card">
+                        <svg viewBox="0 0 1069 1069" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+                            <!-- your technology svg path -->
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="text-card">
+                        <h1>Health</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident deserunt id temporibus
+                            exercitationem...</p>
+                    </div>
+                    <div class="pic-card">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.5 9.00002H16.5M16.5 9.00002L14.5 9.00002M16.5 9.00002L16.5 7M16.5 9.00002L16.5 11 ..."
+                                stroke="#000000" stroke-width="1.5" />
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script>
+        const texts = [
+            "Welcome to EaseWork",
+            "Streamline your workflow with EaseWork",
+            "Manage your everyday tasks efficiently.",
+            "Work smarter — not harder."
+        ];
+
+        let textElement = document.querySelector('.sentence');
+        let i = 0, char = 0, isDeleting = false;
+
+        function type() {
+            let current = texts[i];
+            if (!isDeleting && char <= current.length) {
+                textElement.textContent = current.substring(0, char++);
+                setTimeout(type, 60);
+            } else if (isDeleting && char > 0) {
+                textElement.textContent = current.substring(0, --char);
+                setTimeout(type, 35);
+            } else {
+                isDeleting = !isDeleting;
+                if (!isDeleting) {
+                    i = (i + 1) % texts.length;
+                }
+                setTimeout(type, isDeleting ? 40 : 1800);
+            }
+        }
+
+        type();
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        }
+
+        // Page load hone pe saved theme apply karo
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            // Agar pehli baar hai toh dark mode default rakh sakte ho
+            setTheme('dark');
+        }
+    </script>
+
+</body>
+
+</html>

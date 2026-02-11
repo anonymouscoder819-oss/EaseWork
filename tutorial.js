@@ -28,4 +28,3 @@
 // console.log(arr.filter(greaterThanSeven));
 // arr.sort((a, b) => b-a)
 // console.log(arr);
-

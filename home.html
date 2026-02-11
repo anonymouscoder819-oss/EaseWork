@@ -28,48 +28,21 @@
         <div id="navbar-placeholder"></div>
         <main class="transition-fade" id="swup">
             <div class="home-section">
-                <div class="left-section">
-                    <h1>Welcome to EaseWork</h1>
-                    <h3>Streamline your workflow with EaseWork</h3>
-                    <h4>EaseWork helps you to manage your everyday tasks efficiently.</h4>
-                    <div class="btn">
-                        <button>Sign In<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
-                                width="24px" fill="#000000">
-                                <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
-                            </svg>
-                        </button>
-                        <button>Login<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
-                                width="24px" fill="#000000">
-                                <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
-                            </svg>
-                        </button>
-                    </div>
-
-                </div>
-
-                <div class="right-section">
-                    <div class="carousel-container">
-                        <div class="slides">
-
-                            <div class="slide" style="background-image: url('assets/images/wp12736218.webp');">
-                            </div>
-
-                            <div class="slide" style="background-image: url('assets/images/thumbbig-1353386.webp');">
-                            </div>
-
-                            <div class="slide"
-                                style="background-image: url('assets/images/pexels-rsantos1232-3888149.jpg');">
-                            </div>
-
-                            <div class="slide"
-                                style="background-image: url('assets/images/pexels-themob000-28428592.jpg');">
-                            </div>
-
-                        </div>
-                    </div>
+                <h1>EaseWork</h1>
+                <div class="sentence"></div>
+                <div class="btn">
+                    <button>Sign In<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                            width="24px" fill="#000000">
+                            <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                        </svg>
+                    </button>
+                    <button>Login<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                            width="24px" fill="#000000">
+                            <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+                        </svg>
+                    </button>
                 </div>
             </div>
-            <div class="line"></div>
 
             <div class="card-container">
                 <div class="card">
@@ -289,6 +262,47 @@
 
 
         });
+
+        const texts = [
+            "Welcome to EaseWork",
+            "Streamline your workflow with EaseWork",
+            "EaseWork helps you to manage your everyday tasks efficiently."
+        ];
+
+        let textElement = document.querySelector('.sentence');
+        let currentTextIndex = 0;
+        let charIndex = 0;
+        let isTyping = true;
+        let typingSpeed = 50;
+        let erasingSpeed = 15;
+        let pauseDuration = 2000;
+
+        function typeWriter() {
+            const currentText = texts[currentTextIndex];
+
+            if (isTyping) {
+                if (charIndex < currentText.length) {
+                    textElement.textContent += currentText.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeWriter, typingSpeed);
+                } else {
+                    isTyping = false;
+                    setTimeout(typeWriter, pauseDuration);
+                }
+            } else {
+                if (charIndex > 0) {
+                    textElement.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(typeWriter, erasingSpeed);
+                } else {
+                    isTyping = true;
+                    currentTextIndex = (currentTextIndex + 1) % texts.length;
+                    setTimeout(typeWriter, 500);
+                }
+            }
+        }
+        typeWriter();
+
     </script>
 </body>
 

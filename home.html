@@ -27,6 +27,31 @@
     <div class="container">
         <div id="navbar-placeholder"></div>
         <main class="transition-fade" id="swup">
+            <div class="stars-bg"></div>
+            <div class="petals-container">
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <div class="petal"></div>
+    <!-- You can keep adding more <div class="petal"></div> lines -->
+    <!-- 30–80 petals usually give a nice full look -->
+  </div>
             <div class="home-section">
                 <h1>EaseWork</h1>
                 <div class="sentence"></div>
@@ -229,6 +254,13 @@
             });
         });
     </script>
+
+<div class="theme-button">
+    <button class="theme-toggle" aria-label="Toggle theme">
+        <img src="assets/images/icons8-sun-48.png" alt="Light mode" class="theme-icon sun">
+        <img src="assets/images/icons8-moon-100.png" alt="Dark mode" class="theme-icon moon">
+    </button>
+</div>
     <script>
         fetch('nav.html')
             .then(response => response.text())
@@ -302,8 +334,19 @@
             }
         }
         typeWriter();
-
+        const toggleBtn = document.querySelector('.theme-toggle');
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        let currentTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+        html.setAttribute('data-theme', currentTheme);
+        toggleBtn.addEventListener('click', () => {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', currentTheme);
+            localStorage.setItem('theme', currentTheme);
+        });
     </script>
+
 </body>
 
 </html>

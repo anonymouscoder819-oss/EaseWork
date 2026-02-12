@@ -339,7 +339,7 @@ html.is-animating .transition-wipe {
     color: #0f121a;
 }
 
-[data-theme="light"] *::selection{
+[data-theme="light"] *::selection {
     background-color: #0f121a;
     color: pink;
 }
@@ -1187,182 +1187,407 @@ header.heading {
 [data-theme="dark"] .stars-bg,
 [data-theme="dark"] .stars-bg::before,
 [data-theme="dark"] .stars-bg::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* ── Layer 1: small distant stars ─────────────── */
 [data-theme="dark"] .stars-bg {
-  background-image:
-    radial-gradient(circle at 12% 18%, #ffffff 1px, transparent 1.2px),
-    radial-gradient(circle at 28% 62%, #f0f0ff 1px, transparent 1.2px),
-    radial-gradient(circle at 45% 35%, #ffffff 0.8px, transparent 1px),
-    radial-gradient(circle at 67% 80%, #e8e8ff 1.2px, transparent 1.4px),
-    radial-gradient(circle at  4% 88%, #ffffff 1px, transparent 1.2px),
-    radial-gradient(circle at 81% 22%, #f8f8ff 0.9px, transparent 1.1px),
-    radial-gradient(circle at 19% 41%, #dddddd 1px, transparent 1.2px),
-    radial-gradient(circle at 33%  7%, #ffffff 1.1px, transparent 1.3px),
-    radial-gradient(circle at 56% 94%, #eeeeee 0.8px, transparent 1px),
-    radial-gradient(circle at 72% 55%, #ffffff 1px, transparent 1.2px),
-    radial-gradient(circle at 91% 12%, #f0f0ff 1.2px, transparent 1.4px),
-    radial-gradient(circle at  8% 73%, #ffffff 0.9px, transparent 1.1px),
-    radial-gradient(circle at 24% 29%, #e0e0ff 1px, transparent 1.2px),
-    radial-gradient(circle at 39% 84%, #ffffff 1px, transparent 1.2px),
-    radial-gradient(circle at 63%  9%, #dddddd 0.8px, transparent 1px),
-    radial-gradient(circle at 77% 68%, #ffffff 1.1px, transparent 1.3px),
-    radial-gradient(circle at 95% 44%, #f8f8ff 1px, transparent 1.2px),
-    radial-gradient(circle at 51% 21%, #eeeeee 0.9px, transparent 1.1px),
-    radial-gradient(circle at  3%  5%, #ffffff 1px, transparent 1.2px),
-    radial-gradient(circle at 88% 91%, #ffffff 1.2px, transparent 1.4px);
-  background-size: 180px 180px;
-  opacity: 0.75;
-  animation: drift-slow 180s linear infinite;
+    background-image:
+        radial-gradient(circle at 12% 18%, #ffffff 1px, transparent 1.2px),
+        radial-gradient(circle at 28% 62%, #f0f0ff 1px, transparent 1.2px),
+        radial-gradient(circle at 45% 35%, #ffffff 0.8px, transparent 1px),
+        radial-gradient(circle at 67% 80%, #e8e8ff 1.2px, transparent 1.4px),
+        radial-gradient(circle at 4% 88%, #ffffff 1px, transparent 1.2px),
+        radial-gradient(circle at 81% 22%, #f8f8ff 0.9px, transparent 1.1px),
+        radial-gradient(circle at 19% 41%, #dddddd 1px, transparent 1.2px),
+        radial-gradient(circle at 33% 7%, #ffffff 1.1px, transparent 1.3px),
+        radial-gradient(circle at 56% 94%, #eeeeee 0.8px, transparent 1px),
+        radial-gradient(circle at 72% 55%, #ffffff 1px, transparent 1.2px),
+        radial-gradient(circle at 91% 12%, #f0f0ff 1.2px, transparent 1.4px),
+        radial-gradient(circle at 8% 73%, #ffffff 0.9px, transparent 1.1px),
+        radial-gradient(circle at 24% 29%, #e0e0ff 1px, transparent 1.2px),
+        radial-gradient(circle at 39% 84%, #ffffff 1px, transparent 1.2px),
+        radial-gradient(circle at 63% 9%, #dddddd 0.8px, transparent 1px),
+        radial-gradient(circle at 77% 68%, #ffffff 1.1px, transparent 1.3px),
+        radial-gradient(circle at 95% 44%, #f8f8ff 1px, transparent 1.2px),
+        radial-gradient(circle at 51% 21%, #eeeeee 0.9px, transparent 1.1px),
+        radial-gradient(circle at 3% 5%, #ffffff 1px, transparent 1.2px),
+        radial-gradient(circle at 88% 91%, #ffffff 1.2px, transparent 1.4px);
+    background-size: 180px 180px;
+    opacity: 0.75;
+    animation: drift-slow 180s linear infinite;
 }
 
 /* ── Layer 2: medium stars, fewer, slower ─────── */
 [data-theme="dark"] .stars-bg::before {
-  background-image:
-    radial-gradient(circle at 22% 75%, #ffffff 1.8px, transparent 2.2px),
-    radial-gradient(circle at 48% 16%, #f0f0ff 2px, transparent 2.4px),
-    radial-gradient(circle at  9% 33%, #ffffff 1.6px, transparent 2px),
-    radial-gradient(circle at 71% 59%, #e8e8ff 2.2px, transparent 2.6px),
-    radial-gradient(circle at 36% 92%, #ffffff 1.9px, transparent 2.3px),
-    radial-gradient(circle at 84%  8%, #dddddd 2px, transparent 2.4px),
-    radial-gradient(circle at 61% 41%, #ffffff 1.7px, transparent 2.1px),
-    radial-gradient(circle at 15% 80%, #f8f8ff 2.1px, transparent 2.5px),
-    radial-gradient(circle at 93% 27%, #eeeeee 1.8px, transparent 2.2px),
-    radial-gradient(circle at  5% 54%, #ffffff 2px, transparent 2.4px),
-    radial-gradient(circle at 42%  3%, #ffffff 1.9px, transparent 2.3px),
-    radial-gradient(circle at 78% 86%, #f0f0ff 2px, transparent 2.4px);
-  background-size: 320px 320px;
-  opacity: 0.5;
-  animation: drift-slow 260s linear infinite reverse;
+    background-image:
+        radial-gradient(circle at 22% 75%, #ffffff 1.8px, transparent 2.2px),
+        radial-gradient(circle at 48% 16%, #f0f0ff 2px, transparent 2.4px),
+        radial-gradient(circle at 9% 33%, #ffffff 1.6px, transparent 2px),
+        radial-gradient(circle at 71% 59%, #e8e8ff 2.2px, transparent 2.6px),
+        radial-gradient(circle at 36% 92%, #ffffff 1.9px, transparent 2.3px),
+        radial-gradient(circle at 84% 8%, #dddddd 2px, transparent 2.4px),
+        radial-gradient(circle at 61% 41%, #ffffff 1.7px, transparent 2.1px),
+        radial-gradient(circle at 15% 80%, #f8f8ff 2.1px, transparent 2.5px),
+        radial-gradient(circle at 93% 27%, #eeeeee 1.8px, transparent 2.2px),
+        radial-gradient(circle at 5% 54%, #ffffff 2px, transparent 2.4px),
+        radial-gradient(circle at 42% 3%, #ffffff 1.9px, transparent 2.3px),
+        radial-gradient(circle at 78% 86%, #f0f0ff 2px, transparent 2.4px);
+    background-size: 320px 320px;
+    opacity: 0.5;
+    animation: drift-slow 260s linear infinite reverse;
 }
 
 /* ── Layer 3: tiny close stars + gentle twinkle ─ */
 [data-theme="dark"] .stars-bg::after {
-  background-image:
-    radial-gradient(circle at 17%  9%, #ffffff 0.7px, transparent 0.9px),
-    radial-gradient(circle at 31% 52%, #ffffff 0.6px, transparent 0.8px),
-    radial-gradient(circle at 54% 27%, #f8f8ff 0.8px, transparent 1px),
-    radial-gradient(circle at  6% 66%, #eeeeee 0.7px, transparent 0.9px),
-    radial-gradient(circle at 89% 18%, #ffffff 0.6px, transparent 0.8px),
-    radial-gradient(circle at 26% 85%, #dddddd 0.7px, transparent 0.9px),
-    radial-gradient(circle at 73% 38%, #ffffff 0.8px, transparent 1px),
-    radial-gradient(circle at 41%  4%, #f0f0ff 0.7px, transparent 0.9px),
-    radial-gradient(circle at 62% 71%, #ffffff 0.6px, transparent 0.8px),
-    radial-gradient(circle at 98% 49%, #eeeeee 0.7px, transparent 0.9px),
-    radial-gradient(circle at 11% 92%, #ffffff 0.8px, transparent 1px),
-    radial-gradient(circle at 82% 63%, #f8f8ff 0.6px, transparent 0.8px),
-    radial-gradient(circle at 35% 14%, #ffffff 0.7px, transparent 0.9px),
-    radial-gradient(circle at 67% 96%, #dddddd 0.7px, transparent 0.9px),
-    radial-gradient(circle at  2% 39%, #ffffff 0.8px, transparent 1px);
-  background-size: 110px 110px;
-  opacity: 0.9;
-  animation: twinkle 4.2s ease-in-out infinite alternate,
-             drift-fast 90s linear infinite;
+    background-image:
+        radial-gradient(circle at 17% 9%, #ffffff 0.7px, transparent 0.9px),
+        radial-gradient(circle at 31% 52%, #ffffff 0.6px, transparent 0.8px),
+        radial-gradient(circle at 54% 27%, #f8f8ff 0.8px, transparent 1px),
+        radial-gradient(circle at 6% 66%, #eeeeee 0.7px, transparent 0.9px),
+        radial-gradient(circle at 89% 18%, #ffffff 0.6px, transparent 0.8px),
+        radial-gradient(circle at 26% 85%, #dddddd 0.7px, transparent 0.9px),
+        radial-gradient(circle at 73% 38%, #ffffff 0.8px, transparent 1px),
+        radial-gradient(circle at 41% 4%, #f0f0ff 0.7px, transparent 0.9px),
+        radial-gradient(circle at 62% 71%, #ffffff 0.6px, transparent 0.8px),
+        radial-gradient(circle at 98% 49%, #eeeeee 0.7px, transparent 0.9px),
+        radial-gradient(circle at 11% 92%, #ffffff 0.8px, transparent 1px),
+        radial-gradient(circle at 82% 63%, #f8f8ff 0.6px, transparent 0.8px),
+        radial-gradient(circle at 35% 14%, #ffffff 0.7px, transparent 0.9px),
+        radial-gradient(circle at 67% 96%, #dddddd 0.7px, transparent 0.9px),
+        radial-gradient(circle at 2% 39%, #ffffff 0.8px, transparent 1px);
+    background-size: 110px 110px;
+    opacity: 0.9;
+    animation: twinkle 4.2s ease-in-out infinite alternate,
+        drift-fast 90s linear infinite;
 }
 
 /* Animations ───────────────────────────────────── */
 
 @keyframes drift-slow {
-  from { background-position: 0 0; }
-  to   { background-position: 800px 1200px; }
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 800px 1200px;
+    }
 }
 
 @keyframes drift-fast {
-  from { background-position: 0 0; }
-  to   { background-position: 600px 900px; }
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 600px 900px;
+    }
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0.75; }
-  50%      { opacity: 1.0; }
+
+    0%,
+    100% {
+        opacity: 0.75;
+    }
+
+    50% {
+        opacity: 1.0;
+    }
 }
 
 
-.petals-container {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -1;
-      overflow: hidden;
-    }
+[data-theme="light"] .petals-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
 
-    .petal {
-      position: absolute;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      will-change: transform, opacity;
-      opacity: 0;
-      animation: randomFloat linear infinite;
-      animation-delay: var(--delay, 0s);
-      animation-duration: var(--duration, 60s);
-      transform-origin: center;
-    }
+[data-theme="light"] .petal {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    will-change: transform, opacity;
+    opacity: 0;
+    animation: randomFloat linear infinite;
+    animation-delay: var(--delay, 0s);
+    animation-duration: var(--duration, 60s);
+    transform-origin: center;
+}
 
-    /* === Replace this with YOUR transparent petal image === */
-    .petal {
-      background-image: url('/assets/images/rose.png');
-      /* or local file: url('/images/rose-petal.png') */
-    }
+/* === Replace this with YOUR transparent petal image === */
+[data-theme="light"] .petal {
+    background-image: url('/assets/images/rose.png');
+    /* or local file: url('/images/rose-petal.png') */
+}
 
-    /* 20 petals with different timings, sizes, starting positions and rotations */
-    .petal:nth-child(1)  { --duration: 58s; --delay: -6s;   width: 54px; height: 54px; left:  6%; top: -15%; --rot:  18deg; }
-    .petal:nth-child(2)  { --duration: 72s; --delay: -14s; width: 38px; height: 38px; left: 24%; top: -28%; --rot: -32deg; }
-    .petal:nth-child(3)  { --duration: 46s; --delay: -9s;  width: 62px; height: 62px; left: 48%; top: -12%; --rot:  45deg; }
-    .petal:nth-child(4)  { --duration: 81s; --delay: -22s; width: 44px; height: 44px; left: 78%; top: -35%; --rot: -14deg; }
-    .petal:nth-child(5)  { --duration: 64s; --delay: -4s;  width: 56px; height: 56px; left: 12%; top: -42%; --rot:   8deg; }
-    .petal:nth-child(6)  { --duration: 53s; --delay: -17s; width: 40px; height: 40px; left: 42%; top: -10%; --rot:  28deg; }
-    .petal:nth-child(7)  { --duration: 77s; --delay: -26s; width: 48px; height: 48px; left: 68%; top: -38%; --rot: -40deg; }
-    .petal:nth-child(8)  { --duration: 61s; --delay: -11s; width: 58px; height: 58px; left:  2%; top: -20%; --rot:  22deg; }
-    .petal:nth-child(9)  { --duration: 69s; --delay: -19s; width: 42px; height: 42px; left: 58%; top: -30%; --rot: -24deg; }
-    .petal:nth-child(10) { --duration: 50s; --delay: -3s;  width: 66px; height: 66px; left: 84%; top: -16%; --rot:  36deg; }
-    .petal:nth-child(11) { --duration: 55s; --delay: -8s;  width: 50px; height: 50px; left: 18%; top: -25%; --rot: -18deg; }
-    .petal:nth-child(12) { --duration: 74s; --delay: -21s; width: 46px; height: 46px; left: 36%; top: -33%; --rot:  30deg; }
-    .petal:nth-child(13) { --duration: 48s; --delay: -5s;  width: 60px; height: 60px; left: 76%; top: -22%; --rot: -28deg; }
-    .petal:nth-child(14) { --duration: 66s; --delay: -15s; width: 52px; height: 52px; left:  9%; top: -45%; --rot:  14deg; }
-    .petal:nth-child(15) { --duration: 59s; --delay: -12s; width: 54px; height: 54px; left: 52%; top: -19%; --rot: -35deg; }
-    .petal:nth-child(16) { --duration: 70s; --delay: -24s; width: 39px; height: 39px; left: 91%; top: -31%; --rot:  25deg; }
-    .petal:nth-child(17) { --duration: 51s; --delay: -7s;  width: 57px; height: 57px; left: 29%; top: -27%; --rot: -12deg; }
-    .petal:nth-child(18) { --duration: 78s; --delay: -20s; width: 45px; height: 45px; left: 63%; top: -39%; --rot:  40deg; }
-    .petal:nth-child(19) { --duration: 62s; --delay: -10s; width: 49px; height: 49px; left:  4%; top: -23%; --rot: -22deg; }
-    .petal:nth-child(20) { --duration: 67s; --delay: -16s; width: 53px; height: 53px; left: 87%; top: -14%; --rot:  16deg; }
+/* 20 petals with different timings, sizes, starting positions and rotations */
+[data-theme="light"] .petal:nth-child(1) {
+    --duration: 58s;
+    --delay: -6s;
+    width: 54px;
+    height: 54px;
+    left: 6%;
+    top: -15%;
+    --rot: 18deg;
+}
 
-    @keyframes randomFloat {
-      0% {
+[data-theme="light"] .petal:nth-child(2) {
+    --duration: 72s;
+    --delay: -14s;
+    width: 38px;
+    height: 38px;
+    left: 24%;
+    top: -28%;
+    --rot: -32deg;
+}
+
+[data-theme="light"] .petal:nth-child(3) {
+    --duration: 46s;
+    --delay: -9s;
+    width: 62px;
+    height: 62px;
+    left: 48%;
+    top: -12%;
+    --rot: 45deg;
+}
+
+[data-theme="light"] .petal:nth-child(4) {
+    --duration: 81s;
+    --delay: -22s;
+    width: 44px;
+    height: 44px;
+    left: 78%;
+    top: -35%;
+    --rot: -14deg;
+}
+
+[data-theme="light"] .petal:nth-child(5) {
+    --duration: 64s;
+    --delay: -4s;
+    width: 56px;
+    height: 56px;
+    left: 12%;
+    top: -42%;
+    --rot: 8deg;
+}
+
+[data-theme="light"] .petal:nth-child(6) {
+    --duration: 53s;
+    --delay: -17s;
+    width: 40px;
+    height: 40px;
+    left: 42%;
+    top: -10%;
+    --rot: 28deg;
+}
+
+[data-theme="light"] .petal:nth-child(7) {
+    --duration: 77s;
+    --delay: -26s;
+    width: 48px;
+    height: 48px;
+    left: 68%;
+    top: -38%;
+    --rot: -40deg;
+}
+
+[data-theme="light"] .petal:nth-child(8) {
+    --duration: 61s;
+    --delay: -11s;
+    width: 58px;
+    height: 58px;
+    left: 2%;
+    top: -20%;
+    --rot: 22deg;
+}
+
+[data-theme="light"] .petal:nth-child(9) {
+    --duration: 69s;
+    --delay: -19s;
+    width: 42px;
+    height: 42px;
+    left: 58%;
+    top: -30%;
+    --rot: -24deg;
+}
+
+[data-theme="light"] .petal:nth-child(10) {
+    --duration: 50s;
+    --delay: -3s;
+    width: 66px;
+    height: 66px;
+    left: 84%;
+    top: -16%;
+    --rot: 36deg;
+}
+
+[data-theme="light"] .petal:nth-child(11) {
+    --duration: 55s;
+    --delay: -8s;
+    width: 50px;
+    height: 50px;
+    left: 18%;
+    top: -25%;
+    --rot: -18deg;
+}
+
+[data-theme="light"] .petal:nth-child(12) {
+    --duration: 74s;
+    --delay: -21s;
+    width: 46px;
+    height: 46px;
+    left: 36%;
+    top: -33%;
+    --rot: 30deg;
+}
+
+[data-theme="light"] .petal:nth-child(13) {
+    --duration: 48s;
+    --delay: -5s;
+    width: 60px;
+    height: 60px;
+    left: 76%;
+    top: -22%;
+    --rot: -28deg;
+}
+
+[data-theme="light"] .petal:nth-child(14) {
+    --duration: 66s;
+    --delay: -15s;
+    width: 52px;
+    height: 52px;
+    left: 9%;
+    top: -45%;
+    --rot: 14deg;
+}
+
+[data-theme="light"] .petal:nth-child(15) {
+    --duration: 59s;
+    --delay: -12s;
+    width: 54px;
+    height: 54px;
+    left: 52%;
+    top: -19%;
+    --rot: -35deg;
+}
+
+[data-theme="light"] .petal:nth-child(16) {
+    --duration: 70s;
+    --delay: -24s;
+    width: 39px;
+    height: 39px;
+    left: 91%;
+    top: -31%;
+    --rot: 25deg;
+}
+
+[data-theme="light"] .petal:nth-child(17) {
+    --duration: 51s;
+    --delay: -7s;
+    width: 57px;
+    height: 57px;
+    left: 29%;
+    top: -27%;
+    --rot: -12deg;
+}
+
+[data-theme="light"] .petal:nth-child(18) {
+    --duration: 78s;
+    --delay: -20s;
+    width: 45px;
+    height: 45px;
+    left: 63%;
+    top: -39%;
+    --rot: 40deg;
+}
+
+[data-theme="light"] .petal:nth-child(19) {
+    --duration: 62s;
+    --delay: -10s;
+    width: 49px;
+    height: 49px;
+    left: 4%;
+    top: -23%;
+    --rot: -22deg;
+}
+
+[data-theme="light"] .petal:nth-child(20) {
+    --duration: 67s;
+    --delay: -16s;
+    width: 53px;
+    height: 53px;
+    left: 87%;
+    top: -14%;
+    --rot: 16deg;
+}
+
+@keyframes randomFloat {
+    0% {
         transform: translate(0, 0) rotate(var(--rot)) scale(0.92);
         opacity: 0;
-      }
-      6%   { opacity: 0.42; }
-      18%  { transform: translate(90px, 140px) rotate(calc(var(--rot) + 50deg)) scale(1.18); }
-      34%  { transform: translate(-80px, 260px) rotate(calc(var(--rot) - 38deg)) scale(0.94); }
-      48%  { transform: translate(110px, 380px) rotate(calc(var(--rot) + 28deg)) scale(1.08); }
-      62%  { transform: translate(-50px, 520px) rotate(calc(var(--rot) - 45deg)) scale(0.88); }
-      78%  { transform: translate(80px, 660px) rotate(calc(var(--rot) + 18deg)) scale(1.12); }
-      92%  { transform: translate(-40px, 780px) rotate(calc(var(--rot) - 25deg)) scale(0.92); }
-      100% {
+    }
+
+    6% {
+        opacity: 0.42;
+    }
+
+    18% {
+        transform: translate(90px, 140px) rotate(calc(var(--rot) + 50deg)) scale(1.18);
+    }
+
+    34% {
+        transform: translate(-80px, 260px) rotate(calc(var(--rot) - 38deg)) scale(0.94);
+    }
+
+    48% {
+        transform: translate(110px, 380px) rotate(calc(var(--rot) + 28deg)) scale(1.08);
+    }
+
+    62% {
+        transform: translate(-50px, 520px) rotate(calc(var(--rot) - 45deg)) scale(0.88);
+    }
+
+    78% {
+        transform: translate(80px, 660px) rotate(calc(var(--rot) + 18deg)) scale(1.12);
+    }
+
+    92% {
+        transform: translate(-40px, 780px) rotate(calc(var(--rot) - 25deg)) scale(0.92);
+    }
+
+    100% {
         transform: translate(60px, 920px) rotate(var(--rot)) scale(1);
         opacity: 0;
-      }
+    }
+}
+
+/* Optional very soft overall glow */
+[data-theme="light"] .petals-container::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 220, 220, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -2;
+    animation: faint-glow 24s ease-in-out infinite alternate;
+}
+
+@keyframes faint-glow {
+
+    0%,
+    100% {
+        opacity: 0.35;
     }
 
-    /* Optional very soft overall glow */
-    .petals-container::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(255, 220, 220, 0.06) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: -2;
-      animation: faint-glow 24s ease-in-out infinite alternate;
+    50% {
+        opacity: 0.65;
     }
-
-    @keyframes faint-glow {
-      0%, 100% { opacity: 0.35; }
-      50%      { opacity: 0.65; }
-    }
+}

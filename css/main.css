@@ -1324,7 +1324,7 @@ header.heading {
 
 /* === Replace this with YOUR transparent petal image === */
 [data-theme="light"] .petal {
-    background-image: url('/assets/images/rose.png');
+    background-image: url('../assets/images/rose.png');
     /* or local file: url('/images/rose-petal.png') */
 }
 

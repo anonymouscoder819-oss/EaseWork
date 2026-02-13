@@ -559,9 +559,10 @@ header.heading {
 .main-body h1 {
     font-size: 50px;
     font-weight: 100;
-    text-shadow: 6px -6px 10px rgba(0, 0, 0, 0.5);
     font-family: "Exo 2", sans-serif;
     font-weight: bold;
+    color: var(--accent);
+    text-shadow: 2px 2px 8px var(--accent-dark);
 }
 
 .poem {
@@ -797,7 +798,7 @@ header.heading {
     transition: all 0.35s ease;
     background: linear-gradient(135deg, var(--bg-card-hover), var(--bg-card));
     color: var(--text-primary);
-    border: 1px solid #2d3748;
+    border: 1px solid var(--border);
 }
 
 .btn button:hover {
@@ -805,6 +806,14 @@ header.heading {
     color: #0f121a;
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0, 212, 255, 0.25);
+}
+ 
+[data-theme="light"] .btn button:hover {
+    background: linear-gradient(45deg, pink , rgb(255, 74, 105));
+    color: #0f121a;
+    border-color: rgb(255, 74, 105);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgb(255, 0, 0, 0.8);
 }
 
 
@@ -1201,22 +1210,7 @@ header.heading {
         radial-gradient(circle at 28% 62%, #f0f0ff 1px, transparent 1.2px),
         radial-gradient(circle at 45% 35%, #ffffff 0.8px, transparent 1px),
         radial-gradient(circle at 67% 80%, #e8e8ff 1.2px, transparent 1.4px),
-        radial-gradient(circle at 4% 88%, #ffffff 1px, transparent 1.2px),
-        radial-gradient(circle at 81% 22%, #f8f8ff 0.9px, transparent 1.1px),
-        radial-gradient(circle at 19% 41%, #dddddd 1px, transparent 1.2px),
-        radial-gradient(circle at 33% 7%, #ffffff 1.1px, transparent 1.3px),
-        radial-gradient(circle at 56% 94%, #eeeeee 0.8px, transparent 1px),
-        radial-gradient(circle at 72% 55%, #ffffff 1px, transparent 1.2px),
-        radial-gradient(circle at 91% 12%, #f0f0ff 1.2px, transparent 1.4px),
-        radial-gradient(circle at 8% 73%, #ffffff 0.9px, transparent 1.1px),
-        radial-gradient(circle at 24% 29%, #e0e0ff 1px, transparent 1.2px),
-        radial-gradient(circle at 39% 84%, #ffffff 1px, transparent 1.2px),
-        radial-gradient(circle at 63% 9%, #dddddd 0.8px, transparent 1px),
-        radial-gradient(circle at 77% 68%, #ffffff 1.1px, transparent 1.3px),
-        radial-gradient(circle at 95% 44%, #f8f8ff 1px, transparent 1.2px),
-        radial-gradient(circle at 51% 21%, #eeeeee 0.9px, transparent 1.1px),
-        radial-gradient(circle at 3% 5%, #ffffff 1px, transparent 1.2px),
-        radial-gradient(circle at 88% 91%, #ffffff 1.2px, transparent 1.4px);
+        radial-gradient(circle at 4% 88%, #ffffff 1px, transparent 1.2px);
     background-size: 180px 180px;
     opacity: 0.75;
     animation: drift-slow 180s linear infinite;
@@ -1228,15 +1222,8 @@ header.heading {
         radial-gradient(circle at 22% 75%, #ffffff 1.8px, transparent 2.2px),
         radial-gradient(circle at 48% 16%, #f0f0ff 2px, transparent 2.4px),
         radial-gradient(circle at 9% 33%, #ffffff 1.6px, transparent 2px),
-        radial-gradient(circle at 71% 59%, #e8e8ff 2.2px, transparent 2.6px),
-        radial-gradient(circle at 36% 92%, #ffffff 1.9px, transparent 2.3px),
-        radial-gradient(circle at 84% 8%, #dddddd 2px, transparent 2.4px),
-        radial-gradient(circle at 61% 41%, #ffffff 1.7px, transparent 2.1px),
-        radial-gradient(circle at 15% 80%, #f8f8ff 2.1px, transparent 2.5px),
-        radial-gradient(circle at 93% 27%, #eeeeee 1.8px, transparent 2.2px),
-        radial-gradient(circle at 5% 54%, #ffffff 2px, transparent 2.4px),
-        radial-gradient(circle at 42% 3%, #ffffff 1.9px, transparent 2.3px),
-        radial-gradient(circle at 78% 86%, #f0f0ff 2px, transparent 2.4px);
+        radial-gradient(circle at 71% 59%, #e8e8ff 2.2px, transparent 2.6px);
+
     background-size: 320px 320px;
     opacity: 0.5;
     animation: drift-slow 260s linear infinite reverse;
@@ -1248,18 +1235,8 @@ header.heading {
         radial-gradient(circle at 17% 9%, #ffffff 0.7px, transparent 0.9px),
         radial-gradient(circle at 31% 52%, #ffffff 0.6px, transparent 0.8px),
         radial-gradient(circle at 54% 27%, #f8f8ff 0.8px, transparent 1px),
-        radial-gradient(circle at 6% 66%, #eeeeee 0.7px, transparent 0.9px),
-        radial-gradient(circle at 89% 18%, #ffffff 0.6px, transparent 0.8px),
-        radial-gradient(circle at 26% 85%, #dddddd 0.7px, transparent 0.9px),
-        radial-gradient(circle at 73% 38%, #ffffff 0.8px, transparent 1px),
-        radial-gradient(circle at 41% 4%, #f0f0ff 0.7px, transparent 0.9px),
-        radial-gradient(circle at 62% 71%, #ffffff 0.6px, transparent 0.8px),
-        radial-gradient(circle at 98% 49%, #eeeeee 0.7px, transparent 0.9px),
-        radial-gradient(circle at 11% 92%, #ffffff 0.8px, transparent 1px),
-        radial-gradient(circle at 82% 63%, #f8f8ff 0.6px, transparent 0.8px),
-        radial-gradient(circle at 35% 14%, #ffffff 0.7px, transparent 0.9px),
-        radial-gradient(circle at 67% 96%, #dddddd 0.7px, transparent 0.9px),
-        radial-gradient(circle at 2% 39%, #ffffff 0.8px, transparent 1px);
+        radial-gradient(circle at 6% 66%, #eeeeee 0.7px, transparent 0.9px);
+
     background-size: 110px 110px;
     opacity: 0.9;
     animation: twinkle 4.2s ease-in-out infinite alternate,
@@ -1322,13 +1299,14 @@ header.heading {
     transform-origin: center;
 }
 
-/* === Replace this with YOUR transparent petal image === */
 [data-theme="light"] .petal {
     background-image: url('https://github.com/anonymouscoder819-oss/EaseWork/blob/main/assets/images/rose.png?raw=true');
-    /* or local file: url('/images/rose-petal.png') */
 }
 
-/* 20 petals with different timings, sizes, starting positions and rotations */
+[data-theme="light"] .petal{
+    background-image: url(/assets/images/rose.png);
+}
+
 [data-theme="light"] .petal:nth-child(1) {
     --duration: 58s;
     --delay: -6s;

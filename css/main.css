@@ -809,11 +809,12 @@ header.heading {
 }
  
 [data-theme="light"] .btn button:hover {
-    background: linear-gradient(45deg, pink , rgb(255, 74, 105));
+    background: linear-gradient(45deg, rgb(255, 47, 82) , rgb(255, 74, 105));
     color: #0f121a;
     border-color: rgb(255, 74, 105);
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgb(255, 0, 0, 0.8);
+    perspective: 1000px;
 }
 
 

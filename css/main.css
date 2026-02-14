@@ -807,7 +807,7 @@ header.heading {
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0, 212, 255, 0.25);
 }
- 
+
 [data-theme="light"] .btn button:hover {
     background: linear-gradient(45deg, rgb(255, 47, 82) , rgb(255, 74, 105));
     color: #0f121a;
@@ -816,7 +816,6 @@ header.heading {
     box-shadow: 0 10px 25px rgb(255, 0, 0, 0.8);
     perspective: 1000px;
 }
-
 
 .btn {
     display: flex;
@@ -1304,10 +1303,6 @@ header.heading {
     background-image: url('https://github.com/anonymouscoder819-oss/EaseWork/blob/main/assets/images/rose.png?raw=true');
 }
 
-[data-theme="light"] .petal{
-    background-image: url(/assets/images/rose.png);
-}
-
 [data-theme="light"] .petal:nth-child(1) {
     --duration: 58s;
     --delay: -6s;
@@ -1548,7 +1543,6 @@ header.heading {
     }
 }
 
-/* Optional very soft overall glow */
 [data-theme="light"] .petals-container::after {
     content: "";
     position: fixed;

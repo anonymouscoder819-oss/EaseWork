@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login</title>
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -8,181 +10,193 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap"
-    rel="stylesheet">
-  <!-- Stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap" rel="stylesheet">
+
   <style media="screen">
     *,
-*:before,
-*:after {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+    *:before,
+    *:after {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
 
-*::selection {
-  background-color: #555;
-}
+    *::selection {
+      background-color: #555;
+    }
 
-body {
-  background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1d 100%);
-  min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
-}
+    body {
+      background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1d 100%);
+      min-height: 100dvh;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+    }
 
-.background {
-  width: 430px;
-  height: 520px;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-}
+    .background {
+      width: clamp(320px, 85vw, 430px);
+      height: clamp(380px, 90vw, 520px);
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      pointer-events: none;
+    }
 
-.background .shape {
-  height: 200px;
-  width: 200px;
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(20px);
-  opacity: 0.6;
-}
+    .background .shape {
+      height: clamp(160px, 45vw, 200px);
+      width: clamp(160px, 45vw, 200px);
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(20px);
+      opacity: 0.6;
+    }
 
-.shape:first-child {
-  background: linear-gradient(135deg, #6b48ff, #00ddeb);
-  left: -80px;
-  top: -80px;
-}
+    .shape:first-child {
+      background: linear-gradient(135deg, #6b48ff, #00ddeb);
+      left: -80px;
+      top: -80px;
+    }
 
-.shape:last-child {
-  background: linear-gradient(135deg, #ff6b6b, #ffa62b);
-  right: -30px;
-  bottom: -80px;
-}
+    .shape:last-child {
+      background: linear-gradient(135deg, #ff6b6b, #ffa62b);
+      right: -30px;
+      bottom: -80px;
+    }
 
-form {
-  height: 480px;
-  width: 400px;
-  background: rgba(20, 20, 35, 0.65);
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  border-radius: 16px;
-  backdrop-filter: blur(12px) saturate(160%);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
-  padding: 50px 35px;
-}
+    form {
+      height: clamp(420px, 85vh, 480px);
+      width:  min(90vw, 400px);
+      background: rgba(20, 20, 35, 0.65);
+      position: relative;
+      border-radius: 16px;
+      backdrop-filter: blur(12px) saturate(160%);
+      -webkit-backdrop-filter: blur(12px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+      padding: clamp(30px, 7vw, 50px) clamp(20px, 6vw, 35px);
+      z-index: 2;
+    }
 
-form * {
-  font-family: 'Poppins', sans-serif;
-  color: #e0e0ff;
-  letter-spacing: 0.4px;
-  outline: none;
-  border: none;
-}
+    form * {
+      font-family: 'Poppins', sans-serif;
+      color: #e0e0ff;
+      letter-spacing: 0.4px;
+      outline: none;
+      border: none;
+    }
 
-form h3 {
-  font-size: 50px;
-  font-weight: 500;
-  line-height: 42px;
-  text-align: center;
-  font-family: "Bitcount Prop Single", system-ui;
-  color: #f0f0ff;
-  margin-bottom: 10px;
-}
+    form h3 {
+      font-size: clamp(36px, 9vw, 50px);
+      font-weight: 500;
+      line-height: 1.1;
+      text-align: center;
+      font-family: "Bitcount Prop Single", system-ui;
+      color: #f0f0ff;
+      margin-bottom: 10px;
+    }
 
-label {
-  display: block;
-  margin-top: 30px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #c0c0ff;
-}
+    label {
+      display: block;
+      margin-top: clamp(24px, 5vw, 30px);
+      font-size: clamp(14px, 3.5vw, 16px);
+      font-weight: 500;
+      color: #c0c0ff;
+    }
 
-input {
-  display: block;
-  height: 50px;
-  width: 100%;
-  background-color: rgba(40, 40, 60, 0.5);
-  border-radius: 8px;
-  padding: 0 14px;
-  margin-top: 8px;
-  font-size: 15px;
-  font-weight: 300;
-  color: #f0f0ff;
-  border: 1px solid rgba(100, 100, 140, 0.3);
-  transition: all 0.25s ease;
-}
+    .input-container {
+      position: relative;
+      width: 100%;
+      margin-top: 8px;
+    }
 
-::placeholder {
-  color: #a0a0c0;
-}
+    .input-container input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid rgba(100, 120, 255, 0.3);
+      border-radius: 0;
+      padding: 15px 0 8px 0;
+      font-size: clamp(14px, 3.8vw, 15px);
+      font-weight: 300;
+      color: #f0f0ff;
+      transition: all 0.25s ease;
+    }
 
-button {
-  margin-top: 50px;
-  width: 100%;
-  background: linear-gradient(90deg, #6b48ff, #00d4ff);
-  color: white;
-  padding: 15px 0;
-  font-size: 18px;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  border: none;
-  transition: all 0.3s ease;
-}
+    .input-container input:focus {
+      border-bottom: 2px solid #6b48ff;
+    }
 
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(80, 100, 255, 0.4);
-}
+    .underline {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, #6b48ff, #00d4ff);
+      transition: width 0.35s ease;
+    }
 
-.input-container {
-  position: relative;
-  display: block;
-  width: 100%;
-}
+    .input-container input:focus + .underline {
+      width: 100%;
+    }
 
-.input-container input[type="text"],
-.input-container input[type="password"] {
-  border: none;
-  border-bottom: 2px solid rgba(100, 120, 255, 0.3);
-  border-radius: 0;
-  background: transparent;
-  padding: 15px 0 8px 0;
-  color: #f0f0ff;
-}
+    ::placeholder {
+      color: #a0a0c0;
+    }
 
-.input-container input[type="text"]:focus,
-.input-container input[type="password"]:focus {
-  border-bottom: 2px solid #6b48ff;
-}
+    button {
+      margin-top: clamp(40px, 8vw, 50px);
+      width: 100%;
+      background: linear-gradient(90deg, #6b48ff, #00d4ff);
+      color: white;
+      padding: clamp(12px, 4vw, 15px) 0;
+      font-size: clamp(16px, 4.2vw, 18px);
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+    }
 
-.underline {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(to right, #6b48ff, #00d4ff);
-  transition: width 0.35s ease;
-}
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(80, 100, 255, 0.4);
+    }
 
-.input-container input:focus + .underline {
-  width: 100%;
-}
+    /* Small screens adjustments */
+    @media (max-width: 480px) {
+      .background .shape:first-child  { left: -60px; top: -60px; }
+      .background .shape:last-child   { right: -20px; bottom: -60px; }
+      
+      form {
+        padding: 30px 20px;
+      }
+    }
+
+    @media (max-height: 580px) {
+      form {
+        height: auto;
+        min-height: 420px;
+        margin: 20px auto;
+        position: static;
+        transform: none;
+      }
+      .background {
+        display: none;   /* optional: hides blobs on very small height screens */
+      }
+    }
   </style>
 </head>
-
 <body>
 
   <div class="background">
     <div class="shape"></div>
     <div class="shape"></div>
   </div>
+
   <form>
     <h3>Login Here</h3>
 
@@ -200,7 +214,6 @@ button:hover {
 
     <button>Log In</button>
   </form>
-  
-</body>
 
+</body>
 </html>
